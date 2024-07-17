@@ -170,17 +170,10 @@ button:active .text {
 
 /* <----- DEBUGGING -----> */
 
-.container {
-    border: 15px solid #933718;
-    border-radius: 15px;
+.pixels {
+    user-select: none; /* Prevent text selection */
+    -webkit-user-drag: none; /* Prevent element dragging on WebKit browsers */
+    -moz-user-drag: none; /* Prevent element dragging on Firefox */
+    -ms-user-drag: none; /* Prevent element dragging on Internet Explorer */
+    user-drag: none; /* Prevent element dragging on modern browsers */
 }
-
-/* .pixel-container {
-    border: 1px solid lime;
-} */
-
-/* .controls-container-left,
-   .controls-container-right {
-    border: 5px solid lime;
-} */
-
