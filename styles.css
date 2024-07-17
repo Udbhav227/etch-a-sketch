@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* <----- CSS -----> */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-box {
+    width: 562px;
+    /* height: 702px; */
+}
+
+.pixel-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pixels {
+    border: 1px solid #f5f5f5;
+}
+
+.controls-container {
+    height: 140px;
+}
+
+
+/* <----- DEBUGGING -----> */
+
+/* .container {
+    border: 1px solid red;
+} */
+
+.main-box {
+    border: 1px solid blue;
+}
+
+/* .pixel-container {
+    border: 1px solid lime;
+} */
+
+.controls-container {
+    border: 1px solid midnightblue;
+}
