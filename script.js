@@ -65,18 +65,23 @@ function createGrid(pixelCount) {
         pixels.classList.add('pixels');
         pixels.style.height = pixelHeight;
         pixels.style.width = pixelWidth;
+        pixels.addEventListener('mousedown', changeColor);
         pixels.addEventListener('mouseover', changeColorOnDrag);
         pixelContainer.appendChild(pixels);
     }
 }
 
+function changeColor(event) {
+    if (eraserIsOn) {
+        event.target.style.backgroundColor = 'white';
+    } else {
+        event.target.style.backgroundColor = 'indigo';
+    }
+}
+
 function changeColorOnDrag(event) {
     if (mouseIsDown) {
-        if (eraserIsOn) {
-            event.target.style.backgroundColor = 'white';
-        } else {
-            event.target.style.backgroundColor = 'indigo';
-        }
+        changeColor(event);
     }
 }
 
