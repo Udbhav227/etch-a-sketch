@@ -6,8 +6,6 @@ const classicBtn = document.querySelector('.classic-btn');
 const eraserBtn = document.querySelector('.eraser-btn');
 const dimensionBtn = document.querySelector('.dimension-btn');
 
-
-
 // <----- PIXEL SETUP ----->
 let pixelCount = 64;
 let pixelWidth = 560 / pixelCount + 'px';
@@ -25,14 +23,31 @@ function createGrid(pixelCount) {
         pixels.classList.add('pixels');
         pixels.style.height = pixelHeight;
         pixels.style.width = pixelWidth;
-        pixels.addEventListener('mouseover', () => {
-            if (mouseIsDown) {
-                pixels.style.backgroundColor = 'indigo';
-            }
-        })
+        pixels.addEventListener('mouseover', changeColorOnDrag);
         pixelContainer.appendChild(pixels);
     }
 }
+
+function changeColorOnDrag(event) {
+    if (mouseIsDown) {
+        if (eraserIsOn) {
+            event.target.style.backgroundColor = 'white';
+        } else {
+            event.target.style.backgroundColor = 'indigo';
+        }
+    }
+}
+
+// <----- CONTROLS SETUP ----->
+resetBtn.addEventListener('click', () => {
+    const pixels = document.querySelectorAll('.pixels');
+    pixels.forEach(pixel => pixel.style.backgroundColor = 'white');
+});
+
+let eraserIsOn = false;
+eraserBtn.addEventListener('click', () => {
+    eraserIsOn ^= true;
+});
 
 // <----- MAIN ----->
 createGrid(pixelCount);
