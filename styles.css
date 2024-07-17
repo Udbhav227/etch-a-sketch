@@ -87,6 +87,87 @@ button:active .text {
     transform: translateY(-2px);
 }
 
+/* <----- MODAL -----> */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 3px solid black;
+    border-radius: 15px;
+    z-index: 10;
+    background-color: white;
+    width: 400px;
+    height: 150px;
+    max-width: 80%;
+    padding: 20px;
+    box-shadow: 15px 12px 7px ;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.modal-header .subtext {
+    font-size: 12px;
+    color: grey;
+    font-style: italic;
+    margin-left: 5px;
+}
+
+.save-btn {
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(84, 105, 212);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 15px;
+}
+
+.modal-header .close-btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+#overlay {
+    position: fixed;
+    transition: 150ms ease-in-out;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    pointer-events: none;
+}
+
+#overlay.active {
+    background-color: rgb(0, 0, 0, .5);
+    pointer-events: all;
+}
+
 /* <----- DEBUGGING -----> */
 
 .container {

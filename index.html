@@ -25,8 +25,21 @@
         <div class="controls-container-right">
             <button class="reset-btn"><span class="text">Reset</span></button>
             <button class="eraser-btn"><span class="text">Eraser</span></button>
-            <button class="dimension-btn"><span class="text">Dimension</span></button>
+            <button class="new-grid-btn"><span class="text">New Grid</span></button>
         </div>
+
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-text">Enter number of pixels per side for the new grid. <span class="subtext">(Range 8-100)</span></div>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="number" id="grid-size" min="8" max="100">
+                <button class="save-btn">Save</button>
+            </div>
+        </div>
+
+        <div id="overlay"></div>
 
     </div>
     <script src="script.js"></script>
