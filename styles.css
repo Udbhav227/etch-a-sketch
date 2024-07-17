@@ -9,50 +9,97 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: #a47bb8;
+    padding-top: 40px;
 }
 
 /* <----- CSS -----> */
 
 .container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-top: 40px;
+    border: 15px solid #933718;
+    border-radius: 15px;
+    background-color: #933718;
 }
 
-.main-box {
-    width: 562px;
-    /* height: 702px; */
+.heading {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #1a0129;
 }
-
+/* <----- CANVAS AREA -----> */
 .pixel-container {
+    width: 562px;
+    min-width: 562px;
     display: flex;
     flex-wrap: wrap;
+    background: white;
 }
 
 .pixels {
     border: 1px solid #f5f5f5;
 }
 
-.controls-container {
-    height: 140px;
+/* <----- CONTROL CONTAINER -----> */
+.controls-container-right,
+.controls-container-left {
+    padding: 20px;
+    background: #f5ae52;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
 }
 
+.controls-container-right {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.controls-container-left {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+/* <----- BUTTON CUSTOMISATION -----> */
+button {
+    position: relative;
+    background: #933718;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.text {
+    display: block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    background: #fc7869;
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+    transform: translateY(-6px);
+    transition: transform ease 0.1s;
+}
+
+button:active .text {
+    transform: translateY(-2px);
+}
 
 /* <----- DEBUGGING -----> */
 
-/* .container {
-    border: 1px solid red;
-} */
-
-.main-box {
-    border: 1px solid blue;
+.container {
+    border: 15px solid #933718;
+    border-radius: 15px;
 }
 
 /* .pixel-container {
     border: 1px solid lime;
 } */
 
-.controls-container {
-    border: 1px solid midnightblue;
-}
+/* .controls-container-left,
+   .controls-container-right {
+    border: 5px solid lime;
+} */
+
