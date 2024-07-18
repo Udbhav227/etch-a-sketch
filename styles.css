@@ -5,6 +5,7 @@
 }
 
 body {
+    font-family:cursive;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,15 +20,15 @@ body {
 .container {
     display: flex;
     margin-top: 40px;
-    border: 15px solid #933718;
+    border: 15px solid #280137;
     border-radius: 15px;
-    background-color: #933718;
+    background-color: #280137;
 }
 
 .heading {
     font-size: 3rem;
     font-weight: 900;
-    color: #1a0129;
+    color: #280137;
 }
 /* <----- CANVAS AREA -----> */
 .pixel-container {
@@ -40,6 +41,10 @@ body {
 
 .pixels {
     border: 1px solid white;
+}
+
+.pixel-container {
+    cursor: crosshair;
 }
 
 /* <----- CONTROL CONTAINER -----> */
@@ -98,6 +103,37 @@ button:active .icon {
     background: #fc7869;
     transform: translateY(-6px);
     transition: transform ease 0.1s;
+}
+
+.controls button:hover::before {
+    content: attr(data-tooltip);
+}
+
+.controls button::before,
+.controls button::after {
+    --scale: 0;
+    position: absolute;
+    top: -.25rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-120%) scale(var(--scale));
+    transition: 150ms transform;
+    transform-origin: bottom center;
+}
+
+.controls button::before {
+    font-family: cursive;
+    content: attr(data-tooltip);
+    color: white;
+    padding: 5px 10px;
+    width: max-content;
+    background:#280137;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.controls button:hover::before,
+.controls button:hover:after {
+    --scale: 1;
 }
 
 /* <----- MODAL -----> */
