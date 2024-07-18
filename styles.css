@@ -11,6 +11,7 @@ body {
     align-items: center;
     background: #a47bb8;
     padding-top: 40px;
+    user-select: none;
 }
 
 /* <----- CSS -----> */
