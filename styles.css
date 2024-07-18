@@ -39,7 +39,7 @@ body {
 }
 
 .pixels {
-    border: 1px solid #f5f5f5;
+    border: 1px solid white;
 }
 
 /* <----- CONTROL CONTAINER -----> */
@@ -74,7 +74,7 @@ button {
 
 .text {
     display: block;
-    padding: 15px 30px;
+    padding: 15px 20px;
     border-radius: 15px;
     background: #fc7869;
     font-weight: bold;
@@ -84,8 +84,20 @@ button {
     transition: transform ease 0.1s;
 }
 
-button:active .text {
+button:active .text,
+button:active .icon {
     transform: translateY(-2px);
+}
+
+.icon {
+    height: 55px;
+    width: auto;
+    padding: 10px;
+    display: block;
+    border-radius: 15px;
+    background: #fc7869;
+    transform: translateY(-6px);
+    transition: transform ease 0.1s;
 }
 
 /* <----- MODAL -----> */
