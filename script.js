@@ -52,7 +52,7 @@ document.addEventListener('mousedown', () => mouseIsDown = true);
 document.addEventListener('mouseup', () => mouseIsDown = false);
 
 // <----- PIXEL SETUP ----->
-let defaultPixelCount = 16;
+let defaultPixelCount = 32;
 createGrid(defaultPixelCount);
 
 
@@ -121,6 +121,7 @@ sketchBtn.addEventListener('click', () => {
     if (!sketchIsOn) reset();
     sketchIsOn = true;
     classicIsOn = false;
+    eraserIsOn = false;
 });
 
 let classicIsOn = true;
@@ -128,4 +129,5 @@ classicBtn.addEventListener('click', () => {
     if (!classicIsOn) reset();
     classicIsOn = true;
     sketchIsOn = false;
+    eraserIsOn = false;
 });
