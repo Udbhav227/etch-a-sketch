@@ -2,9 +2,10 @@
 const pixelContainer = document.querySelector('.pixel-container');
 const resetBtn = document.querySelector('.reset-btn');
 const colorBtn = document.querySelector('.color-btn');
-const classicBtn = document.querySelector('.classic-btn');
 const eraserBtn = document.querySelector('.eraser-btn');
 const newGridBtn = document.querySelector('.new-grid-btn');
+const classicBtn = document.querySelector('.classic-btn');
+const sketchBtn = document.querySelector('.sketch-btn');
 
 // <----- MODAL SETUP ----->
 const closeModalButton = document.querySelector('.close-btn');
@@ -65,6 +66,7 @@ function createGrid(pixelCount) {
         pixels.classList.add('pixels');
         pixels.style.height = pixelHeight;
         pixels.style.width = pixelWidth;
+        pixels.dataset.darkness = 0;
         pixels.addEventListener('mousedown', changeColor);
         pixels.addEventListener('mouseover', changeColorOnDrag);
         pixelContainer.appendChild(pixels);
@@ -72,10 +74,18 @@ function createGrid(pixelCount) {
 }
 
 function changeColor(event) {
+    let pixel = event.target;
+    let darkness = parseInt(pixel.dataset.darkness);
     if (eraserIsOn) {
         event.target.style.backgroundColor = 'white';
+        pixel.dataset.darkness = 0;
     } else {
         event.target.style.backgroundColor = 'indigo';
+        if (sketchIsOn) {
+            darkness = Math.min(darkness + 10, 100);
+            pixel.style.backgroundColor = `rgb(${255 - 2.55 * darkness}, ${255 - 2.55 * darkness}, ${255 - 2.55 * darkness})`;
+            pixel.dataset.darkness = darkness;
+        }
     }
 }
 
@@ -86,15 +96,28 @@ function changeColorOnDrag(event) {
 }
 
 // <----- CONTROLS SETUP ----->
-resetBtn.addEventListener('click', () => {
+function reset () {
     const pixels = document.querySelectorAll('.pixels');
     pixels.forEach(pixel => pixel.style.backgroundColor = 'white');
-});
+}
+
+resetBtn.addEventListener('click', reset);
 
 let eraserIsOn = false;
 eraserBtn.addEventListener('click', () => {
     eraserIsOn ^= true;
 });
 
-// <----- MAIN ----->
-createGrid(pixelCount);
+let sketchIsOn = false;
+sketchBtn.addEventListener('click', () => {
+    sketchIsOn ^= true;
+    classicIsOn = false;
+    reset();
+});
+
+let classicIsOn = true;
+classicBtn.addEventListener('click', () => {
+    classicIsOn ^= true;
+    sketchIsOn = false;
+    reset();
+});
