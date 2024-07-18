@@ -32,6 +32,7 @@ saveButton.addEventListener('click', () => {
         const modal = document.querySelector('.modal');
         closeModal(modal);
     }
+    turnOffEraser();
 });
 
 function openModal(modal) {
@@ -107,6 +108,13 @@ function reset() {
         pixel.style.backgroundColor = 'white';
         pixel.style.opacity = 0; // Reset opacity
     });
+    turnOffEraser();
+
+}
+
+function turnOffEraser() {
+    eraserIsOn = false;
+    pixelContainer.classList.remove('eraser-cursor');
 }
 
 resetBtn.addEventListener('click', reset);
@@ -114,6 +122,7 @@ resetBtn.addEventListener('click', reset);
 let eraserIsOn = false;
 eraserBtn.addEventListener('click', () => {
     eraserIsOn ^= true;
+    eraserIsOn ? pixelContainer.classList.add('eraser-cursor') : pixelContainer.classList.remove('eraser-cursor');
 });
 
 let sketchIsOn = false;
@@ -121,7 +130,7 @@ sketchBtn.addEventListener('click', () => {
     if (!sketchIsOn) reset();
     sketchIsOn = true;
     classicIsOn = false;
-    eraserIsOn = false;
+    turnOffEraser();
 });
 
 let classicIsOn = true;
@@ -129,5 +138,5 @@ classicBtn.addEventListener('click', () => {
     if (!classicIsOn) reset();
     classicIsOn = true;
     sketchIsOn = false;
-    eraserIsOn = false;
+    turnOffEraser();
 });

@@ -1,54 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Etch-A-Sketch</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="header">
-        <span class="heading">Etch-<span style="color: #630000;">a</span>-Sketch</span>
+      <span class="heading"
+        >Etch-<span style="color: #630000">a</span>-Sketch</span
+      >
     </div>
-    
+
     <div class="container">
-        
-        <div class="controls-container-left controls">
-            <button class="color-btn" data-tooltip="Coming soon.."><img class="icon" src="/images/rainbow.svg" alt="random-color-icon"></button>
-            <button class="classic-btn" data-tooltip="Pen"><img class="icon" src="/images/pen-clip.svg" alt="pen-icon"></button>
-            <button class="sketch-btn" data-tooltip="Pencil"><img class="icon" src="/images/pencil.svg" alt="pencil-icon"></button>
-        </div>
-        
-        <div class="pixel-container">
-            <!-- Dyamically insert divs -->
-        </div>
-        
-        <div class="controls-container-right controls">
-            <button class="reset-btn" data-tooltip="Reset"><img class="icon" src="/images/reset.svg" alt="reset-icon"></button>
-            <button class="eraser-btn" data-tooltip="Erase"><img class="icon" src="/images/eraser.svg" alt="eraser-icon"></button>
-            <button class="new-grid-btn" data-tooltip="New grid"><img class="icon" src="/images/new-grid.svg" alt="new-grid-icon"></button>
-        </div>
+      <div class="controls-container-left controls">
+        <button class="color-btn" data-tooltip="Coming soon..">
+          <img class="icon" src="/images/rainbow.svg" alt="random-color-icon" />
+        </button>
+        <button class="classic-btn" data-tooltip="Pen">
+          <img class="icon" src="/images/pen-clip.svg" alt="pen-icon" />
+        </button>
+        <button class="sketch-btn" data-tooltip="Pencil">
+          <img class="icon" src="/images/pencil.svg" alt="pencil-icon" />
+        </button>
+      </div>
 
-        <div class="modal">
-            <div class="modal-header">
-                <div class="modal-text">Enter number of pixels per side for the new grid. <span class="subtext">(Range 8-100)</span></div>
-                <button class="close-btn">&times;</button>
-            </div>
-            <div class="modal-body">
-                <input type="number" id="grid-size" min="8" max="100">
-                <button class="save-btn">Save</button>
-            </div>
+      <div class="pixel-container">
+        <!-- Dyamically insert divs -->
+      </div>
+
+      <div class="controls-container-right controls">
+        <button class="reset-btn" data-tooltip="Reset">
+          <img class="icon" src="/images/reset.svg" alt="reset-icon" />
+        </button>
+        <button class="eraser-btn" data-tooltip="Erase">
+          <img class="icon" src="/images/eraser.svg" alt="eraser-icon" />
+        </button>
+        <button class="new-grid-btn" data-tooltip="New grid">
+          <img class="icon" src="/images/new-grid.svg" alt="new-grid-icon" />
+        </button>
+      </div>
+
+      <div class="modal">
+        <div class="modal-header">
+          <div class="modal-text">
+            Enter number of pixels per side for the new grid.
+            <span class="subtext">(Range 8-100)</span>
+          </div>
+          <button class="close-btn">&times;</button>
         </div>
-
-        <div id="overlay"></div>
-
+        <div class="modal-body">
+          <input type="number" id="grid-size" min="8" max="100" />
+          <button class="save-btn">Save</button>
+        </div>
+      </div>
+      <div id="overlay"></div>
     </div>
 
     <div class="footer">
-        <img class="github" src="/images/github-icon.svg" alt="">
-        <a  href="https://github.com/Udbhav227/" rel="noopener" target="_blank"><span>Copyright &#xa9; Udbhav227 2024</span></a>
+      <img class="github" src="/images/github-icon.svg" alt="" />
+      <a href="https://github.com/Udbhav227/" rel="noopener" target="_blank"
+        ><span>Copyright &#xa9; Udbhav227 2024</span></a
+      >
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

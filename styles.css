@@ -12,8 +12,7 @@ body {
     align-items: center;
     background: #a47bb8;
     user-select: none;
-    margin: 0;
-    height: 100vh;
+
 }
 .heading {
     display: block;
@@ -38,8 +37,6 @@ body {
 
 .github {
     max-width: 16px;
-    max-height: 16px;
-
 }
 
 /* <----- CANVAS AREA -----> */
@@ -67,7 +64,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 40px;
+    gap: 50px;
 }
 
 .controls-container-right {
@@ -87,6 +84,8 @@ button {
     border-radius: 15px;
     border: none;
     cursor: pointer;
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 .text {
@@ -127,7 +126,7 @@ button:active .icon {
     position: absolute;
     top: -.25rem;
     left: 50%;
-    transform: translateX(-50%) translateY(-120%) scale(var(--scale));
+    transform: translateX(-50%) translateY(-130%) scale(var(--scale));
     transition: 150ms transform;
     transform-origin: bottom center;
 }
@@ -146,6 +145,10 @@ button:active .icon {
 .controls button:hover::before,
 .controls button:hover:after {
     --scale: 1;
+}
+
+.eraser-cursor {
+    cursor: url('/images/eraser-svgrepo-com.png'), auto;
 }
 
 /* <----- MODAL -----> */
